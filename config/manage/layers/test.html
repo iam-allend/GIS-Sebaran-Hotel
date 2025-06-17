@@ -1,0 +1,35 @@
+<?php
+    include "../../config/connection.php";
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="container">
+</div>
+    <script>
+
+        $.ajax({
+            type:'GET',
+            url:'KabupatenKarangasem_0.php',
+            data:'',
+            success: function(data){
+                    $('#container').html(data);
+            }
+        });
+
+        const dataWebGis = document.getElementsByName('KabupatenKarangasem_0');
+
+        fetch('../index.php').then(snap => snap.json()).then(result => {
+
+            dataWebGis.innerHTML =result;
+        })
+    </script>
+</body>
+</html>
